@@ -1,0 +1,136 @@
+---
+import ContactCTA from '../components/ContactCTA.astro';
+import Hero from '../components/Hero.astro';
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="About | Pyce" description="About Pyce.">
+	<div class="stack gap-20">
+		<main class="wrapper about">
+			<Hero
+				title="About"
+			>
+				<img
+					width="1553"
+					height="873"
+					src="/assets/kth.jpg"
+					alt="KTH"
+				/>
+			</Hero>
+
+			<section>
+				<h2 class="section-title">Background</h2>
+				<div class="content">
+					<p>
+						I am Pyce. I'm from Sweden and I often enjoy developing software of different purposes,
+						such as websites, Discord bots, IoTs (Internet of things), school work, etc. I prefer backend
+						because I despise working on UI and designing; despite that, I dabble in frontend as well.
+						My current favourite programming language is TypeScript due to its versatility, along with Next.js for websites.
+					</p>
+					<p>
+						My hobbies mainly include programming, self-hosting, golf, table tennis, binging YouTube, playing games, and going to the gym.
+						My plan for the future is to continue in the world of software engineering and hopefully find a great job within this field.
+					</p>
+				</div>
+			</section>
+			<section>
+				<h2 class="section-title">Education</h2>
+				<div class="content">
+					<p>2024-2026: Teknikvetenskap (Engineering Sciences) at ???-gymnasiet.</p>
+				</div>
+			</section>
+			<section>
+				<h2 class="section-title">Tech Stack</h2>
+				<div class="content">
+					<p>
+						Web Development:
+
+						<ul>
+							<li>HTML, CSS, JavaScript/TypeScript</li>
+							<li>Tailwind, shadcn/ui</li>
+							<li>React, Next.js</li>
+							<li>TanStack Query, react-hook-form</li>
+							<li>Drizzle (ORM), Better-Auth</li>
+						</ul>
+					</p>
+					<p>
+						Backend:
+
+						<ul>
+							<li>JavaScript runtimes: Node.js (w/ pnpm), Bun</li>
+							<li>Python, Java (21+)</li>
+							<li>Docker, CI/CD (GitHub Actions)</li>
+						</ul>
+					</p>
+					<p>
+						Mobile Applications:
+
+						<ul>
+							<li>React Native, Expo</li>
+						</ul>
+					</p>
+				</div>
+			</section>
+		</main>
+
+		<ContactCTA />
+	</div>
+</BaseLayout>
+
+<style>
+	.about {
+		display: flex;
+		flex-direction: column;
+		gap: 3.5rem;
+	}
+
+	img {
+		margin-top: 1.5rem;
+		border-radius: 1.5rem;
+		box-shadow: var(--shadow-md);
+	}
+
+	section {
+		display: flex;
+		flex-direction: column;
+		gap: 0.5rem;
+		color: var(--gray-200);
+	}
+
+	.section-title {
+		grid-column-start: 1;
+		font-size: var(--text-xl);
+		color: var(--gray-0);
+	}
+
+	.content {
+		grid-column: 2 / 4;
+	}
+
+	.content :global(a) {
+		text-decoration: 1px solid underline transparent;
+		text-underline-offset: 0.25em;
+		transition: text-decoration-color var(--theme-transition);
+	}
+
+	.content :global(a:hover),
+	.content :global(a:focus) {
+		text-decoration-color: currentColor;
+	}
+
+	@media (min-width: 50em) {
+		.about {
+			display: grid;
+			grid-template-columns: 1fr 60% 1fr;
+		}
+
+		.about > :global(:first-child) {
+			grid-column-start: 2;
+		}
+
+		section {
+			display: contents;
+			font-size: var(--text-lg);
+		}
+	}
+</style>
