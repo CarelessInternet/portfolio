@@ -4,5 +4,4 @@ services:
     build:
       context: .
       dockerfile: ./Dockerfile
-    image: portfolio-website
     restart: unless-stopped
