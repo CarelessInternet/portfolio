@@ -83,6 +83,19 @@ import Icon from './Icon.astro';
 			// Toggle the theme when a user clicks the button.
 			button.addEventListener('click', () => setTheme(!this.isDark()));
 
+			// Save the html tag classes to persist dark mode and other classes.
+			let preSwapClasses: string | null = null;
+
+			document.addEventListener('astro:before-swap', () => preSwapClasses = document.documentElement.className);
+			document.addEventListener('astro:after-swap', () => {
+				if (preSwapClasses !== null) {
+					document.documentElement.className = preSwapClasses;
+				}
+
+				setTheme(this.isDark());
+				preSwapClasses = null;
+			});
+
 			// Initialize button state to reflect current theme.
 			setTheme(this.isDark());
 		}
