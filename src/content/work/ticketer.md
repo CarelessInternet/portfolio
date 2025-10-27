@@ -1,7 +1,7 @@
 ---
 title: Ticketer
 publishDate: 2025-09-28 20:00:00
-img: /assets/ticketer.png
+img: /assets/work/ticketer.png
 img_alt: Ticketer Logo.
 description: |
   Personal project of developing a ticketing-system Discord bot.

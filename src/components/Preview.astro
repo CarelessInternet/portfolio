@@ -1,14 +1,17 @@
 ---
+import type { DataEntryMap } from 'astro:content';
 import type { CollectionEntry } from 'astro:content';
 
 interface Props {
-	project: CollectionEntry<'work'>;
+	type: keyof DataEntryMap;
+	project: CollectionEntry<'work' | 'blog'>;
 }
 
+const { type } = Astro.props;
 const { data, id } = Astro.props.project;
 ---
 
-<a class="card" href={`/work/${id}`}>
+<a class="card" href={`/${type}/${id}`}>
 	<span class="title">{data.title}</span>
 	<img src={data.img} alt={data.img_alt || ''} loading="lazy" decoding="async" />
 </a>

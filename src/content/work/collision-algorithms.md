@@ -1,7 +1,7 @@
 ---
 title: Collision Algorithms Thesis
 publishDate: 2025-09-28 23:00:00
-img: /assets/collision.png
+img: /assets/work/collision.png
 img_alt: SAT collision algorithm showcase.
 description: |
   High School Thesis comparing different collision algorithms.

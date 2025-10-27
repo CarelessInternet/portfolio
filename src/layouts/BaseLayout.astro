@@ -19,7 +19,7 @@ const { title, description } = Astro.props;
 <html lang="en" transition:name="root" transition:animate="none">
 	<head>
 		<ClientRouter />
-		<MainHead title={title} description={description} />
+		<MainHead title={`${title} | Pyce`} description={description} />
 		{UMAMI_ID && UMAMI_URL && <script defer is:inline data-astro-rerun src={`${UMAMI_URL}/script.js`} data-website-id={UMAMI_ID}></script>}
 	</head>
 	<body>
@@ -110,6 +110,7 @@ const { title, description } = Astro.props;
 					/*header2*/ normal,
 					/*base*/ normal;
 			}
+
 			@media (forced-colors: active) {
 				/* Deactivate custom backgrounds for high contrast users. */
 				.backgrounds {
