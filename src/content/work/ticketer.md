@@ -17,4 +17,4 @@ Ticketer allows an easy way to create thread-based tickets in Discord.
 
 # Where?
 
-You can find the [Ticketer website and bot here](https://ticketer-careless.vercel.app/)!
+You can find the [Ticketer website and bot here](https://ticketer.pyce.eu)!

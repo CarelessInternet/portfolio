@@ -11,10 +11,6 @@ const commonSchema = z.object({
 });
 
 export const collections = {
-	blog: defineCollection({
-		loader: glob({ base: './src/content/blog', pattern: '**/*.md' }),
-		schema: commonSchema
-	}),
 	work: defineCollection({
 		// Load Markdown files in the src/content/work directory.
 		loader: glob({ base: './src/content/work', pattern: '**/*.md' }),

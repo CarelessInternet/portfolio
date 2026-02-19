@@ -4,7 +4,7 @@ import type { CollectionEntry } from 'astro:content';
 
 interface Props {
 	type: keyof DataEntryMap;
-	project: CollectionEntry<'work' | 'blog'>;
+	project: CollectionEntry<'work'>;
 }
 
 const { type } = Astro.props;

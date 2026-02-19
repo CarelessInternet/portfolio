@@ -17,10 +17,6 @@ const projects = (await getCollection('work'))
 	.sort((a, b) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf())
 	.slice(0, 4);
 
-const blogs = (await getCollection('blog'))
-	.sort((a, b) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf())
-	.slice(0, 4);
-
 // Full Astro Component Syntax:
 // https://docs.astro.build/basics/astro-components/
 ---
@@ -75,31 +71,6 @@ const blogs = (await getCollection('blog'))
 				<div class="cta">
 					<CallToAction href="/work/">
 						View All
-						<Icon icon="arrow-right" size="1.2em" />
-					</CallToAction>
-				</div>
-			</section>
-			<section class="section with-background with-cta">
-				<header class="section-header stack gap-2 lg:gap-4">
-					<h3>Blog</h3>
-					<p>Take a look below at some of my blog posts.</p>
-				</header>
-
-				<div class="gallery">
-					<Grid variant="offset">
-						{
-							blogs.map((blog) => (
-								<li>
-									<Preview type="blog" project={blog} />
-								</li>
-							))
-						}
-					</Grid>
-				</div>
-
-				<div class="cta">
-					<CallToAction href="/blog/">
-						View Blog Posts
 						<Icon icon="arrow-right" size="1.2em" />
 					</CallToAction>
 				</div>
